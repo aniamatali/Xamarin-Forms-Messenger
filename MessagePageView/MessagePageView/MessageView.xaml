@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MessagePageView; assembly=MessagePageView"
+             x:Class="MessagePageView.MessageView"
+             xmlns:ViewModels="clr-namespace:MessagePageView.ViewModels; assembly=MessagePageView"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             >
+
+    <ContentPage.BindingContext>
+        <ViewModels:MainViewModel x:Name="MainViewModelMessageList" />
+    </ContentPage.BindingContext>
+
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <DataTemplate x:Key="FromTemplate">
+                    <ViewCell>
+                        <ViewCell.View>
+                        <Frame Grid.Row="0"  
+                               Grid.Column="1" 
+                               CornerRadius="10" 
+                               Padding="0" 
+                               Margin="50,10,10,10" 
+                               HeightRequest="75">
+                            <Frame.HasShadow>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+                            </Frame.HasShadow>
+                            <Frame.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color" 
+                                        iOS="#4286f4" 
+                                        Android="#ffffff"/>
+                            </Frame.BackgroundColor>
+                            
+                                <StackLayout Orientation="Horizontal"  HorizontalOptions="End">
+                                <StackLayout>
+                                    <Label 
+                                        Text="{Binding Message}" 
+                                        FontSize="11"
+                                        HorizontalTextAlignment="Center"
+                                        VerticalOptions="FillAndExpand"/>
+                                    <Label 
+                                        FontSize="8" 
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        HorizontalTextAlignment="Center"  
+                                        Text="{Binding TimeStamp, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" 
+                                        TextColor="Gray" 
+                                        BackgroundColor="White"
+                                        Margin="2">
+                                    </Label>
+                                    </StackLayout>
+                                    
+                                <ic:CircleImage
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    Aspect="AspectFit"
+                                    Margin="5"
+                                    Source="{Binding ImageUrl}"/>
+                                    
+                                 </StackLayout>
+                         </Frame>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+
+                <DataTemplate x:Key="ToTemplate">
+                    <ViewCell>
+                        <ViewCell.View>
+                            
+                        <Frame Grid.Row="1"  
+                               Grid.Column="1" 
+                               BackgroundColor="Gray" 
+                               CornerRadius="10"  
+                               Padding="0"
+                               Margin="10,10,50,10"
+                               HeightRequest="75">
+                                <Frame.HasShadow>
+                                    <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+                                </Frame.HasShadow>
+                            <Frame.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color" iOS="#F5F5F5" Android="White"/>
+                            </Frame.BackgroundColor>
+                            
+                            <StackLayout Orientation="Horizontal" BackgroundColor="#007aff"  >
+                                <ic:CircleImage
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    Aspect="AspectFit"
+                                    Margin="5"
+                                    Source="{Binding ImageUrl}"/>
+                                <StackLayout>
+                                    <Label 
+                                            Text="{Binding Message}" 
+                                            FontSize="11"
+                                            HorizontalTextAlignment="Center"
+                                            VerticalOptions="FillAndExpand"
+                                        TextColor="White"
+                                     />
+                                    <Label 
+                                               FontSize="8" 
+                                               Grid.Column="1"  
+                                               Text="{Binding TimeStamp, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" 
+                                               TextColor="White"
+                                               Grid.Row="0"
+                                               HorizontalTextAlignment="Center"
+                                               Margin="2"
+                                        ></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+
+                <local:SmsDataTempSelector x:Key="SmsDataTempSelector" FromTemplate ="{StaticResource FromTemplate}" ToTemplate="{StaticResource ToTemplate}"/>
+
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="Sms Messages" FontSize="20" />
+            <ListView ItemsSource="{Binding MessageList}" x:Name="listMessages" HasUnevenRows="True" ItemTemplate="{StaticResource SmsDataTempSelector}" />
+                <Entry 
+			    HorizontalOptions="FillAndExpand" 
+				HeightRequest="40" 
+				Placeholder="Message" />
+                <!--Text="{Binding OutGoingText}"-->
+                <Button 
+				Text="Send" />
+                <!--Command="{Binding SendCommand}"/>-->
+            </StackLayout>
+        </ContentPage.Content>
+  
+</ContentPage>
