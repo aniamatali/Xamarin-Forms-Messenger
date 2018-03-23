@@ -152,6 +152,7 @@ C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\Mes
 C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\obj\Debug\android\assets\System.ServiceModel.Internals.pdb
 C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\obj\Debug\android\assets\System.Xml.Linq.pdb
 C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\obj\Debug\android\assets\System.Xml.pdb
+C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\obj\Debug\MessagePageView.Android.csprojResolveAssemblyReference.cache
 C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\bin\Debug\MessagePageView.Android.dll
 C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\obj\Debug\linksrc\MessagePageView.Android.dll.mdb
 C:\Users\AlvinNiamatali(Inter\Desktop\StaticList-MessagePage\MessagePageView\MessagePageView.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb

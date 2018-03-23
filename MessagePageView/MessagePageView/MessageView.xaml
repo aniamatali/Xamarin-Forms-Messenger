@@ -21,7 +21,7 @@
                                CornerRadius="10" 
                                Padding="0" 
                                Margin="50,10,10,10" 
-                               HeightRequest="75">
+                               >
                             <Frame.HasShadow>
                                     <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
                             </Frame.HasShadow>
@@ -37,7 +37,8 @@
                                         Text="{Binding Message}" 
                                         FontSize="11"
                                         HorizontalTextAlignment="Center"
-                                        VerticalOptions="FillAndExpand"/>
+                                        VerticalOptions="FillAndExpand"
+                                        Margin="5,0,0,0"/>
                                     <Label 
                                         FontSize="8" 
                                         Grid.Column="1"
@@ -72,8 +73,7 @@
                                BackgroundColor="Gray" 
                                CornerRadius="10"  
                                Padding="0"
-                               Margin="10,10,50,10"
-                               HeightRequest="75">
+                               Margin="10,10,50,10">
                                 <Frame.HasShadow>
                                     <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
                                 </Frame.HasShadow>
@@ -94,7 +94,8 @@
                                             FontSize="11"
                                             HorizontalTextAlignment="Center"
                                             VerticalOptions="FillAndExpand"
-                                        TextColor="White"
+                                            TextColor="White"
+                                            Margin="0,0,5,0"
                                      />
                                     <Label 
                                                FontSize="8" 

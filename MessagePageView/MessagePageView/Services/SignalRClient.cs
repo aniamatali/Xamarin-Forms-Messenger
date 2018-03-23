@@ -43,7 +43,7 @@ namespace MessagePageView.Services
 
         public async Task InitializeSignalR()
         {
-            _hub = new HubConnection(" http://c4f0c087.ngrok.io");
+            _hub = new HubConnection(" http://9dd6481c.ngrok.io");
             _smsHubProxy = _hub.CreateHubProxy("MyHub");
 
             _hub.StateChanged += state =>
